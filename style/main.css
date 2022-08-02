@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+.container .background__curve {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30vw;
+  height: 90vh;
+  z-index: -1;
+  background-image: linear-gradient(45deg, #8838ff, #e942ff);
+  border-radius: 0 0 18rem 18rem;
+}
+
+@media screen and (max-width: 768px) {
+  .container .background__curve {
+    height: 50vh;
+    left: -15vw;
+  }
+}
+
+.container .phone__container {
+  width: 350px;
+  height: 720px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  background-color: white;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+  border: solid white 0.75rem;
+}
+
+@media screen and (max-width: 768px) {
+  .container .phone__container {
+    margin-top: 4rem;
+  }
+}
+
+.container .phone__container .chat__container {
+  width: 100%;
+  height: 100%;
+}
+
+.container .phone__container .chat__container .chat__header-container {
+  width: 100%;
+  height: 75px;
+  position: relative;
+  background-image: linear-gradient(45deg, #8838ff, #e942ff);
+  border-radius: 1rem 1rem .5rem .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2rem 1rem 1rem 1rem;
+  -webkit-box-shadow: 0 3px 3px #8838ff;
+          box-shadow: 0 3px 3px #8838ff;
+}
+
+.container .phone__container .chat__container .chat__header-container .phone__notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 150px;
+  height: 20px;
+  border-radius: 0 0 1rem 1rem;
+  background-color: white;
+}
+
+.container .phone__container .chat__container .chat__header-container .user__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .phone__container .chat__container .chat__header-container .user__container .icon-left {
+  color: white;
+}
+
+.container .phone__container .chat__container .chat__header-container .user__container .avatar__container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #9241c8;
+  margin: 0 .5rem;
+  background-image: url("./../images/avatar.jpg");
+  background-size: cover;
+  background-position: center;
+  border: solid white 1px;
+}
+
+.container .phone__container .chat__container .chat__header-container .user__container .user__name__container p.name {
+  font-weight: 500;
+  color: white;
+  margin-bottom: .25rem;
+}
+
+.container .phone__container .chat__container .chat__header-container .user__container .user__name__container p.status {
+  color: #c6cacd;
+  font-size: .75rem;
+}
+
+.container .phone__container .chat__container .chat__header-container .dots__container {
+  color: white;
+}
+
+.container .phone__container .chat__container .chat__conversation-container {
+  width: 100%;
+  height: calc(100% - 75px);
+  padding: 1rem 0;
+  background-color: #f5f3f7;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__row {
+  width: 100%;
+  min-height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__row .conversation__cloud {
+  height: 100%;
+  min-width: 30px;
+  width: 200px;
+  padding: .5rem 1rem;
+  margin: .5rem;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__row .notification {
+  background-image: linear-gradient(45deg, #8838ff, #e942ff);
+  border-radius: 1rem 1rem 1rem .5rem;
+  min-width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__row .notification .notification__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__row .notification .notification__left .notification__icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: solid #a39daa 1px;
+  margin-right: .5rem;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__row .notification .notification__left .notification__text {
+  color: white;
+  font-size: .75rem;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__row .notification .notification__value {
+  color: white;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__row .conversation__cloud-text {
+  font-size: .8rem;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__row .conversation__images {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-right: .5rem;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__row .conversation__images .image {
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  border-radius: 1rem;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__row .conversation__images .image:nth-of-type(1) {
+  background-image: url("./../images/dog-image-1.jpg");
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__row .conversation__images .image:nth-of-type(2) {
+  background-image: url("./../images/dog-image-2.jpg");
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__row .conversation__images .image:nth-of-type(3) {
+  background-image: url("./../images/dog-image-3.jpg");
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__row .other {
+  background-color: #e570ff;
+  border-radius: 1rem 1rem 1rem .5rem;
+  color: #3e2753;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__row .mine {
+  background-color: white;
+  border-radius: 1rem 1rem .5rem 1rem;
+  color: #3e2753;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .row__mine {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .row__other {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__input-container .conversation-input {
+  width: 90%;
+  padding: 1rem .5rem;
+  margin: 0 auto;
+  border-radius: 2rem;
+  border: none;
+  outline: none;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__input-container .conversation-input::-webkit-input-placeholder {
+  color: #a39daa;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__input-container .conversation-input:-ms-input-placeholder {
+  color: #a39daa;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__input-container .conversation-input::-ms-input-placeholder {
+  color: #a39daa;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__input-container .conversation-input::placeholder {
+  color: #a39daa;
+}
+
+.container .phone__container .chat__container .chat__conversation-container .conversation__input-container .conversation-btn {
+  position: absolute;
+  top: .25rem;
+  right: 1.5rem;
+  padding: .75rem 1rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #3e2753;
+  color: white;
+  font-weight: 700;
+}
+
+.container .info__container {
+  padding: 0 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .container .info__container {
+    margin-top: 4rem;
+  }
+}
+
+.container .info__container .info__title {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.container .info__container .info__description {
+  color: #a39daa;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+/*# sourceMappingURL=main.css.map */
